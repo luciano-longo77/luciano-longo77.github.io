@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Luciano Longo banner">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#f1f5f9"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="35%" r="45%">
+      <stop offset="0%" stop-color="#bfa577" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#bfa577" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g fill="none" stroke="#947a4b" stroke-opacity="0.2">
+    <path d="M120 740 C420 620, 740 780, 1040 680 S1420 640, 1540 720" stroke-width="2"/>
+    <path d="M60 560 C340 470, 680 600, 960 520 S1320 500, 1540 560" stroke-width="1.5"/>
+  </g>
+  <text x="120" y="690" fill="#0f172a" font-size="66" font-family="Cormorant Garamond, serif">
+    Luciano Longo
+  </text>
+  <text x="124" y="742" fill="#1e293b" font-size="28" font-family="Inter, sans-serif" letter-spacing="2">
+    Digital Scholarly Editing � TEI/XML � Genetic Criticism
+  </text>
+</svg>
