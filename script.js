@@ -1,6 +1,6 @@
 /* ============================================
 SCRIPT.JS - Luciano Longo Portfolio
-Versione: 2.3 | WCAG 2.2 AA, Industrial-Grade & Ottimizzato
+Versione: 2.3 | WCAG 2.2 AA
 ============================================ */
 
 // === 0. Fallback Accessibilità (JS attivo) ===
@@ -72,7 +72,7 @@ window.closeModal = function(modalId) {
     const modal = typeof modalId === 'string' ? document.getElementById(modalId) : modalId;
     if (!modal) return;
 
-    // Ripristina scroll in modo matematico (evita errori di parsing CSS)
+    // scroll in modo matematico
     const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
     window.scrollTo({ top: parseInt(scrollY || '0', 10), behavior: 'auto' });
     
@@ -81,7 +81,7 @@ window.closeModal = function(modalId) {
     document.body.classList.remove('modal-open');
     document.documentElement.style.removeProperty('--scroll-y');
 
-    // Rimuovi Focus Trap per evitare leak di memoria
+    
     if (modal._focusTrapHandler) {
         modal.removeEventListener('keydown', modal._focusTrapHandler);
         delete modal._focusTrapHandler;
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 });
     document.querySelectorAll('.section-animate').forEach(el => observer.observe(el));
 
-    // --- 6. Back to Top (Semplificato & Sicuro) ---
+    // --- 6. Back to Top ---
     const backToTop = document.getElementById('backToTop');
     if (backToTop) {
         window.addEventListener('scroll', throttle(() => {
@@ -185,14 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 7. Gestione Modali: ESC + Click Backdrop ---
+    // --- 7. Gestione Modali---
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
             document.querySelectorAll('[id^="modal-"]:not(.hidden)').forEach(m => window.closeModal(m.id));
         }
     });
 
-    // --- 8. Research Scroll Dots (Indice Dinamico) ---
+    // --- 8. Research Scroll Dots  ---
     const researchScroll = document.getElementById('research-scroll');
     if (researchScroll) {
         const updateDots = throttle(() => {
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDots();
     }
 
-    // --- 9. Cursor Glow (Respecta prefers-reduced-motion) ---
+    // --- 9. Cursor Glow  ---
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const glow = document.createElement('div');
         glow.className = 'cursor-glow';
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// === Tailwind Config (CDN Safe) ===
+// === Tailwind Config ===
 window.tailwind = window.tailwind || {};
 window.tailwind.config = {
     theme: {
@@ -242,3 +242,45 @@ window.tailwind.config = {
         }
     }
 };
+// --- 9. Cursor Glow (Touch-Aware & Reduced Motion) ---
+const isTouch = window.matchMedia('(pointer: coarse)').matches;
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!isTouch && !prefersReduced) {
+    const glow = document.createElement('div');
+    glow.className = 'cursor-glow';
+    glow.setAttribute('aria-hidden', 'true');
+    document.documentElement.appendChild(glow);
+    
+    document.addEventListener('mousemove', e => {
+        document.documentElement.style.setProperty('--mx', e.clientX + 'px');
+        document.documentElement.style.setProperty('--my', e.clientY + 'px');
+    }, { passive: true });
+}
+// --- 7.1. Chiusura modale tap su backdrop  ---
+document.addEventListener('click', e => {
+    const openModal = document.querySelector('[role="dialog"]:not(.hidden)');
+    // Chiude solo se il click avviene fuori dal contenuto del modale
+    if (openModal && !e.target.closest('.modal-content-wrapper')) {
+        window.closeModal(openModal.id);
+    }
+});
+// Sostituisci INTERAMENTE la funzione window.scrollResearch esistente con questa:
+window.scrollResearch = function(direction) {
+    const container = document.getElementById('research-scroll');
+    if (!container) return;
+    
+    const card = container.querySelector('article');
+    if (!card || card.offsetWidth === 0) return; // Guardia per elementi non renderizzati
+    
+    const gap = 24;
+    const scrollAmount = direction * (card.offsetWidth + gap);
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+};
+// Inserisci QUESTO codice alla fine del blocco // --- 1. Mobile Menu ---
+// (subito dopo il forEach dei link e prima della chiusura della parentesi graffa dell'if)
+window.addEventListener('resize', throttle(() => {
+    if (window.innerWidth > 768 && !mobileMenu.classList.contains('hidden')) {
+        toggleMenu(); // Richiama la funzione già definita nello stesso scope
+    }
+}, 150));
