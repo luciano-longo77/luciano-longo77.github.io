@@ -1,6 +1,6 @@
 /* ============================================
 STYLES.CSS - Luciano Longo Portfolio
-Versione: 4.2 | WCAG 2.2 AA, Sintassi Validata & JS/HTML Coerente
+Versione: 4.2 | WCAG 2.2 AA
 ============================================ */
 
 /* 1. VARIABILI GLOBALI */
@@ -150,7 +150,7 @@ section[id], footer[id] { scroll-margin-top: 100px; }
 .lux-link:hover { color: var(--gold); }
 .nav-link.active { color: var(--gold) !important; }
 
-/* ✅ CONTATTO NAVBAR - Contorno Zero Layout Shift */
+/* CONTATTO NAVBAR */
 .nav-contact-outline {
   position: relative;
   color: var(--gold) !important;
@@ -240,7 +240,7 @@ svg text[class*="fill-brand-900"] {
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
 
-/* 10. BACK TO TOP (UNIFICATO) */
+/* 10. BACK TO TOP */
 .back-to-top {
   position: fixed; bottom: 30px; left: 30px; right: auto;
   width: 50px; height: 50px; background: var(--brand-900);
@@ -343,7 +343,7 @@ body.modal-open {
   section { page-break-inside: avoid; }
 }
 
-/* HERO SECTION BACKGROUND - STILE ACCADEMICO FADED */
+/* HERO SECTION BACKGROUND */
 #presentation {
   background: 
     linear-gradient(to right, 
