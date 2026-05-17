@@ -353,23 +353,3 @@ body.modal-open {
     );
   background-color: #ffffff;
 }
-/* WCAG 2.2 AA: Target tattili minimi */
-a, button, [role="button"], input, select, textarea {
-  min-height: 44px;
-  min-width: 44px;
-  padding: 0.5rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Carousel nativo mobile-friendly */
-#research-scroll {
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-x: contain;
-}
-#research-scroll article {
-  scroll-snap-align: start;
-  flex-shrink: 0;
-}
