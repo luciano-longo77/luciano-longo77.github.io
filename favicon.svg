@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Luciano Longo">
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  <g fill="none" stroke="#947a4b" stroke-width="1.4" stroke-linecap="round">
+    <path d="M12 12h8"/><path d="M12 12v8"/>
+    <path d="M52 12h-8"/><path d="M52 12v8"/>
+    <path d="M12 52h8"/><path d="M12 52v-8"/>
+    <path d="M52 52h-8"/><path d="M52 52v-8"/>
+  </g>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#947a4b" stroke-width="0.6" opacity="0.35"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Georgia, 'Cormorant Garamond', serif" font-style="italic" font-size="30" fill="#bfa577" letter-spacing="-1">LL</text>
+</svg>

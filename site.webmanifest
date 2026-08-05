@@ -1,0 +1,14 @@
+{
+  "name": "Luciano Longo — Digital Scholarly Editing & TEI/XML",
+  "short_name": "Luciano Longo",
+  "description": "Ricercatore indipendente in filologia digitale, critica genetica e codifica TEI/XML.",
+  "lang": "it",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f172a",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" }
+  ]
+}
