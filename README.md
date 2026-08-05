@@ -1,34 +1,42 @@
 # Luciano Longo | Portfolio
 
-Portfolio statico personale dedicato a ricerca in Digital Humanities, TEI/XML e critica genetica.
+Personal portfolio dedicated to research in Digital Humanities, TEI/XML and genetic criticism.
 
-## Struttura
+## Structure
 
-- `index.html`: pagina principale del portfolio.
-- `styles.css`: stili globali.
-- `script.js`: logica frontend e accessibilita.
-- `entry/`: landing/entry page.
-- `sitemap.xml` e `robots.txt`: SEO crawling.
+The site is bilingual, with English at the root and Italian in a subfolder:
 
-## Avvio locale
+- `index.html`: main portfolio page (English).
+- `it/index.html`: Italian version of the portfolio.
+- `styles.css`: global styles.
+- `script.js`: frontend logic and accessibility.
+- `tailwind.css`: pre-compiled Tailwind stylesheet (see *CSS build* below).
+- `favicon.svg`, `site.webmanifest`: icons and web app manifest.
+- `sitemap.xml`, `robots.txt`: SEO and crawling.
 
-Apri `index.html` in browser oppure servi la cartella con un server statico.
+The two language versions are linked through `hreflang` alternates, a canonical
+URL and an in-page language switcher.
 
-## Build CSS (Tailwind)
+## Local preview
 
-Il file `tailwind.css` è **pre-compilato** e versionato: il sito non dipende più
-dalla CDN runtime di Tailwind (nessun rischio di pagina senza stile, nessun
-compilatore JS che blocca il rendering).
+Open `index.html` in a browser, or serve the folder with a static server.
 
-Se si aggiungono nuove classi Tailwind in `index.html`, rigenerare il CSS con:
+## CSS build (Tailwind)
+
+The `tailwind.css` file is **pre-compiled** and committed: the site no longer
+depends on the Tailwind runtime CDN (no risk of an unstyled page, and no JS
+compiler blocking rendering).
+
+When new Tailwind classes are added to `index.html` or `it/index.html`,
+regenerate the CSS with:
 
 ```
 npx tailwindcss@3 -c tailwind.config.js -i tailwind.input.css -o tailwind.css --minify
 ```
 
-Le classi applicate via JavaScript sono elencate nella `safelist` di
+Classes applied via JavaScript are listed in the `safelist` of
 `tailwind.config.js`.
 
 ## Deploy
 
-Progetto pensato per hosting statico (es. GitHub Pages).
+Designed for static hosting (e.g. GitHub Pages).
