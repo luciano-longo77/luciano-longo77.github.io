@@ -1,0 +1,156 @@
+/* ============================================
+   ENTRY.CSS — Mappa d'ingresso di Luciano Longo
+   ============================================ */
+
+:root{
+  --brand-900:#0f172a; --brand-800:#1e293b; --brand-700:#334155;
+  --brand-200:#e2e8f0;
+  --gold:#947a4b; --gold-light:#bfa577;
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100vh; min-height:100svh;
+  background:var(--brand-900); color:var(--brand-200);
+  font-family:'Inter',system-ui,sans-serif; font-weight:300;
+  line-height:1.6; overflow-x:hidden;
+  display:flex; align-items:center; justify-content:center;
+  padding:1.1rem 1.25rem;
+}
+svg{display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- sfondi decorativi ANIMATI ---------- */
+.bg-layer{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.glow{position:absolute;top:50%;left:50%;width:min(680px,90vw);height:min(680px,90vw);
+  transform:translate(-50%,-50%);background:var(--gold);border-radius:50%;
+  filter:blur(150px);opacity:.06;animation:pulseGlow 11s ease-in-out infinite}
+.glow-2{position:absolute;top:14%;left:10%;width:280px;height:280px;background:var(--gold-light);
+  border-radius:50%;filter:blur(90px);opacity:.05;animation:drift1 18s ease-in-out infinite}
+.glow-3{position:absolute;bottom:12%;right:8%;width:320px;height:320px;background:var(--gold);
+  border-radius:50%;filter:blur(110px);opacity:.045;animation:drift2 22s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{opacity:.05;transform:translate(-50%,-50%) scale(1)}50%{opacity:.09;transform:translate(-50%,-50%) scale(1.08)}}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-45px)}}
+.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(15,23,42,.75) 100%)}
+.grain{position:absolute;inset:0;opacity:.03;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")}
+#stardust{position:fixed;inset:0;z-index:0;pointer-events:none}
+.dust{position:absolute;border-radius:50%;background:var(--gold-light);
+  box-shadow:0 0 6px var(--gold-light);animation:starFloat 9s linear infinite}
+@keyframes starFloat{0%{transform:translateY(0) translateX(0);opacity:0}
+  20%{opacity:.9}80%{opacity:.5}100%{transform:translateY(-70px) translateX(22px);opacity:0}}
+/* tag TEI/XML fluttuanti */
+#teitags{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.tei-tag{position:absolute;font-family:'Courier New',ui-monospace,monospace;
+  font-size:clamp(.62rem,1.5vw,.82rem);letter-spacing:.04em;color:var(--gold);
+  white-space:nowrap;opacity:0;text-shadow:0 0 8px rgba(148,122,75,.35);
+  animation:teiFloat var(--dur,18s) ease-in-out infinite}
+@keyframes teiFloat{
+  0%{transform:translateY(26px) rotate(var(--rot,0deg));opacity:0}
+  18%{opacity:.2}
+  50%{transform:translateY(-22px) rotate(var(--rot,0deg));opacity:.12}
+  82%{opacity:.17}
+  100%{transform:translateY(-64px) rotate(var(--rot,0deg));opacity:0}}
+
+/* ---------- layout centrale ---------- */
+main{position:relative;z-index:10;width:100%;max-width:760px;text-align:center}
+
+/* logo */
+.logo{display:flex;justify-content:center;margin-bottom:.7rem}
+.logo .float{animation:logoFloat 8s ease-in-out infinite}
+.logo .breathe{animation:logoBreathe 6s ease-in-out infinite}
+@keyframes logoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-5px) rotate(.4deg)}}
+@keyframes logoBreathe{0%,100%{opacity:.7}50%{opacity:1}}
+.stroke-draw{stroke-dasharray:200;stroke-dashoffset:200;animation:strokeDraw 1.6s .35s ease-out forwards}
+@keyframes strokeDraw{to{stroke-dashoffset:0}}
+
+/* identità */
+h1{font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;
+  font-size:clamp(1.9rem,5.4vw,2.5rem);letter-spacing:.02em;line-height:1.1}
+h1 .accent{color:var(--gold-light)}
+.rule{height:1px;width:min(220px,60%);margin:.8rem auto;
+  background:linear-gradient(to right,transparent,rgba(148,122,75,.5),transparent);
+  animation:ruleGrow 1.4s .4s ease-out forwards;transform-origin:center;transform:scaleX(0)}
+@keyframes ruleGrow{to{transform:scaleX(1)}}
+.tagline{font-size:clamp(.72rem,2.4vw,.82rem);letter-spacing:.34em;text-transform:uppercase;
+  color:rgba(226,232,240,.75);font-weight:400}
+.quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
+  font-size:clamp(1rem,3.4vw,1.14rem);color:rgba(226,232,240,.85);margin-top:.85rem;line-height:1.45}
+.quote-src{margin-top:.4rem;font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(148,122,75,.7)}
+
+/* ---------- CAROSELLO 3D (competenze) ---------- */
+.carousel-wrap{perspective:1100px;height:40px;margin:.75rem 0 0;display:flex;justify-content:center;align-items:center;pointer-events:none}
+.carousel-stage{width:212px;height:38px;position:relative;transform-style:preserve-3d}
+.carousel-stage.spin{animation:spin3d 40s linear infinite}
+.carousel-stage.pause{animation-play-state:paused}
+@keyframes spin3d{to{transform:rotateY(360deg)}}
+.c-card{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(30,41,59,.55);border:1px solid rgba(148,122,75,.25);border-radius:3px;
+  backface-visibility:hidden;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.c-card span{font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:#f8fafc;white-space:nowrap;padding:0 .3rem}
+.c-card b{color:var(--gold-light);font-weight:600}
+.c-hint{margin-top:.5rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(191,165,119,.75)}
+
+/* ---------- SELETTORE LINGUA (angolo alto-destra) ---------- */
+.lang-bar{position:fixed;top:1rem;right:1.1rem;z-index:30;display:inline-flex;gap:.2rem;padding:.22rem;
+  border:1px solid rgba(148,122,75,.35);border-radius:999px;background:rgba(15,23,42,.6);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.lang-btn{font-family:inherit;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+  padding:.3rem .78rem;border:0;border-radius:999px;background:transparent;color:rgba(226,232,240,.72);
+  cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease)}
+.lang-btn:hover{color:var(--gold-light)}
+.lang-btn.active{background:var(--gold);color:#0f172a}
+.lang-btn:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px}
+@media(max-width:480px){.lang-bar{top:.7rem;right:.7rem}.lang-btn{padding:.28rem .7rem;font-size:.6rem}}
+
+/* ---------- LA MAPPA: le porte (dinamiche) ---------- */
+.map{display:grid;grid-template-columns:repeat(2,1fr);gap:.65rem;margin:.8rem 0 .8rem}
+@media(min-width:720px){.map{grid-template-columns:repeat(4,1fr)}}
+.door{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;
+  text-align:left;gap:.2rem;padding:.85rem .9rem .9rem;
+  background:rgba(30,41,59,.5);border:1px solid rgba(148,122,75,.18);border-radius:6px;
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  transition:transform .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease),box-shadow .35s var(--ease);
+  min-height:98px}
+/* luce che attraversa la porta in continuo */
+.door::before{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(191,165,119,.12),transparent);
+  transform:skewX(-18deg);animation:sweep 6s ease-in-out infinite;pointer-events:none}
+.door:nth-child(2)::before{animation-delay:1.4s}
+.door:nth-child(3)::before{animation-delay:2.8s}
+.door:nth-child(4)::before{animation-delay:4.2s}
+@keyframes sweep{0%{left:-60%}45%,100%{left:130%}}
+.door:hover,.door:focus-visible{transform:translateY(-5px);border-color:var(--gold);
+  background:rgba(30,41,59,.85);box-shadow:0 14px 34px -12px rgba(148,122,75,.55);outline:none}
+.door>*{position:relative;z-index:1}
+.door .name{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:500;color:#fff;line-height:1.1}
+.door .desc{font-size:.68rem;color:rgba(226,232,240,.72);line-height:1.35}
+.door .go{margin-top:auto;font-size:.64rem;letter-spacing:.06em;color:rgba(191,165,119,.85);
+  opacity:0;transform:translateX(-4px);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.door:hover .go,.door:focus-visible .go{opacity:1;transform:translateX(0)}
+
+/* link rapidi */
+.quick{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.65rem 1rem;margin-top:.3rem}
+.quick a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(226,232,240,.68);
+  position:relative;padding:.2rem 0;transition:color .3s ease}
+.quick a::after{content:'';position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--gold);transition:width .3s ease}
+.quick a:hover{color:var(--gold-light)}
+.quick a:hover::after{width:100%}
+.quick .sep{color:rgba(148,122,75,.35);font-size:.6rem}
+
+footer{margin-top:.95rem;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(226,232,240,.32)}
+
+/* ---------- fade-in a cascata ---------- */
+.fade{opacity:0;animation:fade 1s ease-out forwards}
+.d1{animation-delay:.15s}.d2{animation-delay:.35s}.d3{animation-delay:.55s}
+.d4{animation-delay:.75s}.d5{animation-delay:.95s}.d6{animation-delay:1.15s}.d7{animation-delay:1.35s}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .fade,.rule{opacity:1!important;transform:none!important}
+  .stroke-draw{stroke-dashoffset:0}
+  #stardust,#teitags,.carousel-wrap{display:none}
+}
