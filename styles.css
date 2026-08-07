@@ -19,7 +19,10 @@ Versione: 4.2 | WCAG 2.2 AA
 /* 2. RESET & BASE */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html {
-  scroll-behavior: smooth;
+  /* Niente scroll-behavior:smooth globale: causava uno scorrimento animato
+     all'arrivo su un deep-link (#sezione), percepito come "tremore" nel
+     passaggio dall'entry. Lo scorrimento morbido sui click interni è già
+     gestito da script.js (window.scrollTo{behavior:'smooth'}). */
   scroll-padding-top: 100px;
   overflow-x: hidden;
 }
