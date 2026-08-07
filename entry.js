@@ -4,13 +4,15 @@
    ============================================ */
 
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var small  = window.matchMedia('(max-width: 768px)').matches;
 
 // Polvere di stelle
 (function(){
   if (reduce) return;
   var c = document.getElementById('stardust');
   if (!c) return;
-  for (var i=0;i<24;i++){
+  var N = small ? 10 : 24;
+  for (var i=0;i<N;i++){
     var p=document.createElement('div');
     p.className='dust';
     var s=(Math.random()*2+2);
@@ -34,7 +36,7 @@ var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var used = tags.slice();
   // mescola in modo deterministico-vario e prende 11 tag
   for (var k=used.length-1;k>0;k--){ var j=(k*7+3)%(k+1); var t=used[k];used[k]=used[j];used[j]=t; }
-  var n = 11;
+  var n = small ? 6 : 11;
   for (var i=0;i<n;i++){
     var el=document.createElement('div');
     el.className='tei-tag';
