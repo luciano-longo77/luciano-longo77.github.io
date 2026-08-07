@@ -79,7 +79,7 @@ h1 .accent{color:var(--gold-light)}
   color:rgba(226,232,240,.75);font-weight:400}
 .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
   font-size:clamp(1rem,3.4vw,1.14rem);color:rgba(226,232,240,.85);margin-top:.85rem;line-height:1.45}
-.quote-src{margin-top:.4rem;font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(148,122,75,.7)}
+.quote-src{margin-top:.4rem;font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(191,165,119,.9)}
 
 /* ---------- CAROSELLO 3D (competenze) ---------- */
 .carousel-wrap{perspective:1100px;height:40px;margin:.75rem 0 0;display:flex;justify-content:center;align-items:center;pointer-events:none}
@@ -92,7 +92,7 @@ h1 .accent{color:var(--gold-light)}
   backface-visibility:hidden;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
 .c-card span{font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:#f8fafc;white-space:nowrap;padding:0 .3rem}
 .c-card b{color:var(--gold-light);font-weight:600}
-.c-hint{margin-top:.5rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(191,165,119,.75)}
+.c-hint{margin-top:.5rem;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(191,165,119,.92)}
 
 /* ---------- SELETTORE LINGUA (angolo alto-destra) ---------- */
 .lang-bar{position:fixed;top:1rem;right:1.1rem;z-index:30;display:inline-flex;gap:.2rem;padding:.22rem;
@@ -141,19 +141,19 @@ h1 .accent{color:var(--gold-light)}
 
 /* link rapidi */
 .quick{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.65rem 1rem;margin-top:.3rem}
-.quick a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(226,232,240,.68);
+.quick a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(226,232,240,.84);
   position:relative;padding:.2rem 0;transition:color .3s ease}
 .quick a::after{content:'';position:absolute;left:0;bottom:-1px;width:0;height:1px;background:var(--gold);transition:width .3s ease}
 .quick a:hover{color:var(--gold-light)}
 .quick a:hover::after{width:100%}
 .quick .sep{color:rgba(148,122,75,.35);font-size:.6rem}
 
-footer{margin-top:.95rem;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(226,232,240,.32)}
+footer{margin-top:.95rem;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(226,232,240,.6)}
 
 /* ---------- fade-in a cascata ---------- */
-.fade{opacity:0;animation:fade 1s ease-out forwards}
-.d1{animation-delay:.15s}.d2{animation-delay:.35s}.d3{animation-delay:.55s}
-.d4{animation-delay:.75s}.d5{animation-delay:.95s}.d6{animation-delay:1.15s}.d7{animation-delay:1.35s}
+.fade{opacity:0;animation:fade .6s ease-out forwards}
+.d1{animation-delay:.04s}.d2{animation-delay:.1s}.d3{animation-delay:.17s}
+.d4{animation-delay:.24s}.d5{animation-delay:.31s}.d6{animation-delay:.38s}.d7{animation-delay:.45s}
 @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 
 @media(prefers-reduced-motion:reduce){
