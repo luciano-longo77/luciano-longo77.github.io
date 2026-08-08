@@ -9,7 +9,7 @@
   --ease:cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;scrollbar-gutter:stable}
 body{
   min-height:100vh; min-height:100svh;
   background:var(--brand-900); color:var(--brand-200);

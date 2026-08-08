@@ -25,6 +25,10 @@ html {
      gestito da script.js (window.scrollTo{behavior:'smooth'}). */
   scroll-padding-top: 100px;
   overflow-x: hidden;
+  /* Riserva sempre lo spazio della scrollbar: evita lo scatto orizzontale
+     quando si passa dall'entry (senza scrollbar) a una pagina lunga (con
+     scrollbar) su desktop con barre di scorrimento classiche. */
+  scrollbar-gutter: stable;
 }
 body {
   margin: 0; padding: 0;
