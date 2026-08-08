@@ -1,0 +1,14 @@
+# Luciano Longo — Digital Philology
+
+> Academic portfolio of Luciano Longo, independent researcher in digital philology,
+> textual criticism, genetic criticism and TEI/XML scholarly digital editing.
+> The site is bilingual (English and Italian).
+
+## Site
+- [Entry / language selector](https://luciano-longo77.github.io/): bilingual landing page linking to the English and Italian versions.
+- [Portfolio (English)](https://luciano-longo77.github.io/en/): full site in English — about, research, publications, activities, contacts.
+- [Portfolio (Italiano)](https://luciano-longo77.github.io/it/): full site in Italian.
+
+## Profiles
+- [ORCID](https://orcid.org/0009-0005-7557-7546)
+- [GitHub](https://github.com/luciano-longo77)
