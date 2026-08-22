@@ -1,0 +1,47 @@
+name: Validate site
+
+# Validazione automatica del sito a ogni push su main e su ogni pull request.
+# Due controlli indipendenti:
+#   1. HTML5 conforme allo standard (Nu Html Checker / vnu) sulle 3 pagine reali;
+#   2. Link interni, JSON del manifest e XML della sitemap (script Python locale).
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  html5:
+    name: HTML5 (Nu Html Checker)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validazione HTML5 (index.html, en/, it/)
+        uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+        with:
+          root: .
+          # Valida solo le pagine reali del sito (tutte chiamate index.html):
+          # esclude il file di verifica Search Console, che non è vero HTML.
+          extra: --match index.html
+          log_level: INFO
+
+  links-json-xml:
+    name: Link interni, JSON, XML
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Validazione statica (link interni, manifest, sitemap)
+        run: python3 .github/scripts/validate_site.py
