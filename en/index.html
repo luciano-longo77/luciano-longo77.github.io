@@ -729,18 +729,18 @@
             <!-- MODALS STRUCTURE -->
 
             <!-- Modal 1: Edizioni -->
-            <div id="modal-edizioni" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+            <div id="modal-edizioni" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-edizioni-title" aria-hidden="true">
                 <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm transition-opacity"
                     onclick="closeModal('modal-edizioni')"></div>
                 <div class="flex items-center justify-center min-h-screen px-4">
                     <div
                         class="relative bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 transform transition-all scale-100">
-                        <button onclick="closeModal('modal-edizioni')"
+                        <button type="button" aria-label="Close" onclick="closeModal('modal-edizioni')"
                             class="absolute top-4 right-4 text-gray-400 hover:text-brand-900 text-2xl">&times;</button>
                         <div class="text-gold text-3xl mb-4">
                             <i class="fas fa-book-open"></i>
                         </div>
-                        <h3 class="text-2xl font-serif text-brand-900 mb-4">
+                        <h3 id="modal-edizioni-title" class="text-2xl font-serif text-brand-900 mb-4">
                             Digital Critical Editions
                         </h3>
                         <div class="text-gray-600 space-y-3">
@@ -762,18 +762,18 @@
             </div>
 
             <!-- Modal 2: Filologia -->
-            <div id="modal-filologia" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+            <div id="modal-filologia" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-filologia-title" aria-hidden="true">
                 <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm transition-opacity"
                     onclick="closeModal('modal-filologia')"></div>
                 <div class="flex items-center justify-center min-h-screen px-4">
                     <div
                         class="relative bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 transform transition-all scale-100">
-                        <button onclick="closeModal('modal-filologia')"
+                        <button type="button" aria-label="Close" onclick="closeModal('modal-filologia')"
                             class="absolute top-4 right-4 text-gray-400 hover:text-brand-900 text-2xl">&times;</button>
                         <div class="text-gold text-3xl mb-4">
                             <i class="fas fa-pen-fancy"></i>
                         </div>
-                        <h3 class="text-2xl font-serif text-brand-900 mb-4">
+                        <h3 id="modal-filologia-title" class="text-2xl font-serif text-brand-900 mb-4">
                             Authorial Philology
                         </h3>
                         <div class="text-gray-600 space-y-3">
@@ -793,18 +793,18 @@
             </div>
 
             <!-- Modal 3: TEI -->
-            <div id="modal-tei" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+            <div id="modal-tei" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-tei-title" aria-hidden="true">
                 <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm transition-opacity"
                     onclick="closeModal('modal-tei')"></div>
                 <div class="flex items-center justify-center min-h-screen px-4">
                     <div
                         class="relative bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 transform transition-all scale-100">
-                        <button onclick="closeModal('modal-tei')"
+                        <button type="button" aria-label="Close" onclick="closeModal('modal-tei')"
                             class="absolute top-4 right-4 text-gray-400 hover:text-brand-900 text-2xl">&times;</button>
                         <div class="text-gold text-3xl mb-4">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="text-2xl font-serif text-brand-900 mb-4">
+                        <h3 id="modal-tei-title" class="text-2xl font-serif text-brand-900 mb-4">
                             TEI/XML Encoding
                         </h3>
                         <div class="text-gray-600 space-y-3">
@@ -823,18 +823,18 @@
             </div>
 
             <!-- Modal 4: Analisi -->
-            <div id="modal-analisi" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+            <div id="modal-analisi" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-analisi-title" aria-hidden="true">
                 <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm transition-opacity"
                     onclick="closeModal('modal-analisi')"></div>
                 <div class="flex items-center justify-center min-h-screen px-4">
                     <div
                         class="relative bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 transform transition-all scale-100">
-                        <button onclick="closeModal('modal-analisi')"
+                        <button type="button" aria-label="Close" onclick="closeModal('modal-analisi')"
                             class="absolute top-4 right-4 text-gray-400 hover:text-brand-900 text-2xl">&times;</button>
                         <div class="text-gold text-3xl mb-4">
                             <i class="fas fa-chart-bar"></i>
                         </div>
-                        <h3 class="text-2xl font-serif text-brand-900 mb-4">
+                        <h3 id="modal-analisi-title" class="text-2xl font-serif text-brand-900 mb-4">
                             Computational Textual Analysis
                         </h3>
                         <div class="text-gray-600 space-y-3">
@@ -854,18 +854,18 @@
             </div>
 
             <!-- Modal 5: DH Design -->
-            <div id="modal-dh" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+            <div id="modal-dh" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-dh-title" aria-hidden="true">
                 <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm transition-opacity"
                     onclick="closeModal('modal-dh')"></div>
                 <div class="flex items-center justify-center min-h-screen px-4">
                     <div
                         class="relative bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 transform transition-all scale-100">
-                        <button onclick="closeModal('modal-dh')"
+                        <button type="button" aria-label="Close" onclick="closeModal('modal-dh')"
                             class="absolute top-4 right-4 text-gray-400 hover:text-brand-900 text-2xl">&times;</button>
                         <div class="text-gold text-3xl mb-4">
                             <i class="fas fa-project-diagram"></i>
                         </div>
-                        <h3 class="text-2xl font-serif text-brand-900 mb-4">
+                        <h3 id="modal-dh-title" class="text-2xl font-serif text-brand-900 mb-4">
                             Digital Humanities Project Design
                         </h3>
                         <div class="text-gray-600 space-y-3">
@@ -884,18 +884,18 @@
             </div>
 
             <!-- Modal 6: Governance -->
-            <div id="modal-governance" class="fixed inset-0 z-50 hidden" aria-hidden="true">
+            <div id="modal-governance" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-governance-title" aria-hidden="true">
                 <div class="absolute inset-0 bg-brand-900/60 backdrop-blur-sm transition-opacity"
                     onclick="closeModal('modal-governance')"></div>
                 <div class="flex items-center justify-center min-h-screen px-4">
                     <div
                         class="relative bg-white rounded-lg shadow-2xl max-w-2xl w-full p-8 transform transition-all scale-100">
-                        <button onclick="closeModal('modal-governance')"
+                        <button type="button" aria-label="Close" onclick="closeModal('modal-governance')"
                             class="absolute top-4 right-4 text-gray-400 hover:text-brand-900 text-2xl">&times;</button>
                         <div class="text-gold text-3xl mb-4">
                             <i class="fas fa-sitemap"></i>
                         </div>
-                        <h3 class="text-2xl font-serif text-brand-900 mb-4">
+                        <h3 id="modal-governance-title" class="text-2xl font-serif text-brand-900 mb-4">
                             Data Governance &amp; Digital Processes
                         </h3>
                         <div class="text-gray-600 space-y-3">
@@ -1110,7 +1110,7 @@
         <!-- ==========================================
      MODAL 1: BERTOLUCCI (STRUTTURA NUOVA)
      ========================================== -->
-        <div id="modal-bertolucci" class="fixed inset-0 z-[9999] hidden" role="dialog" aria-modal="true"
+        <div id="modal-bertolucci" class="fixed inset-0 z-[9999] hidden" role="dialog" aria-modal="true" aria-labelledby="modal-bertolucci-title"
             aria-hidden="true">
             <!-- Overlay (Chiude al click) -->
             <div class="absolute inset-0 bg-brand-900/80 backdrop-blur-sm" onclick="closeModal('modal-bertolucci')"
@@ -1200,7 +1200,7 @@
         <!-- ==========================================
      MODAL 2: VITTORINI (STRUTTURA NUOVA)
      ========================================== -->
-        <div id="modal-vittorini" class="fixed inset-0 z-[9999] hidden" role="dialog" aria-modal="true"
+        <div id="modal-vittorini" class="fixed inset-0 z-[9999] hidden" role="dialog" aria-modal="true" aria-labelledby="modal-vittorini-title"
             aria-hidden="true">
             <div class="absolute inset-0 bg-brand-900/80 backdrop-blur-sm" onclick="closeModal('modal-vittorini')"
                 aria-hidden="true"></div>
@@ -1279,7 +1279,7 @@
         <!-- ==========================================
      MODAL 3: MISTICA (STRUTTURA NUOVA)
      ========================================== -->
-        <div id="modal-mistica" class="fixed inset-0 z-[9999] hidden" role="dialog" aria-modal="true"
+        <div id="modal-mistica" class="fixed inset-0 z-[9999] hidden" role="dialog" aria-modal="true" aria-labelledby="modal-mistica-title"
             aria-hidden="true">
             <div class="absolute inset-0 bg-brand-900/80 backdrop-blur-sm" onclick="closeModal('modal-mistica')"
                 aria-hidden="true"></div>
