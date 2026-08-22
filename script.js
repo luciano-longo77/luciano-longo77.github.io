@@ -1,6 +1,6 @@
 /* ============================================
 SCRIPT.JS - Luciano Longo Portfolio
-Versione: 2.3 | WCAG 2.2 AA
+Versione: 2.4 | WCAG 2.2 AA
 ============================================ */
 
 // === 0. Fallback Accessibilità (JS attivo) ===
@@ -52,6 +52,9 @@ window.openModal = function(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
 
+    // Salva l'elemento che ha aperto il modale, per ripristinare il focus alla chiusura (WCAG 2.4.3)
+    modal._opener = document.activeElement;
+
     // Blocca scroll e salva posizione
     const scrollY = window.scrollY;
     document.documentElement.style.setProperty('--scroll-y', `${scrollY}px`);
@@ -85,6 +88,13 @@ window.closeModal = function(modalId) {
     if (modal._focusTrapHandler) {
         modal.removeEventListener('keydown', modal._focusTrapHandler);
         delete modal._focusTrapHandler;
+    }
+
+    // Ripristina il focus sull'elemento che aveva aperto il modale (WCAG 2.4.3)
+    const opener = modal._opener;
+    delete modal._opener;
+    if (opener && typeof opener.focus === 'function' && document.contains(opener)) {
+        opener.focus();
     }
 };
 
@@ -190,6 +200,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') {
             document.querySelectorAll('[id^="modal-"]:not(.hidden)').forEach(m => window.closeModal(m.id));
         }
+    });
+
+    // --- 7b. Trigger Modali: operabilità da tastiera + semantica ARIA ---
+    // Le card che aprono un modale sono <div>/<article> con onclick: le rendo
+    // focalizzabili e attivabili con Invio/Spazio, esponendole come pulsanti.
+    document.querySelectorAll('[onclick]').forEach(el => {
+        const handler = el.getAttribute('onclick') || '';
+        if (el.tagName === 'BUTTON' || !handler.includes('openModal')) return;
+        if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+        if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+        el.setAttribute('aria-haspopup', 'dialog');
+        el.addEventListener('keydown', ev => {
+            if (ev.key === 'Enter' || ev.key === ' ' || ev.key === 'Spacebar') {
+                ev.preventDefault(); // evita lo scroll di pagina con la barra spaziatrice
+                el.click();
+            }
+        });
     });
 
     // --- 8. Research Scroll Dots  ---
