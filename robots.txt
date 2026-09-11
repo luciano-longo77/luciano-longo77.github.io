@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://luciano-longo77.github.io/sitemap.xml
+Sitemap: https://luciano-longo77.github.io/castello-dell-anima-edizione/sitemap.xml
