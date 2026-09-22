@@ -384,11 +384,23 @@ body.modal-open {
 
 /* HERO SECTION BACKGROUND */
 #presentation {
-  background: 
-    linear-gradient(to right, 
+  background:
+    linear-gradient(to right,
       rgba(255, 255, 255, 0.99) 0%,
       rgba(255, 255, 255, 0.93) 50%,
       rgba(248, 250, 252, 0.70) 100%
     );
   background-color: #ffffff;
 }
+
+/* ============================================
+   Contrasto AA del testo oro (WCAG 1.4.3, 4.5:1)
+   - default (sfondo chiaro): oro scuro  #7a633d  -> ~5.7:1 su bianco
+   - zone scure (footer, card Ricerca): oro chiaro #bfa577 -> ~6-7:1
+   Riguarda solo il testo oro pieno e persistente. Restano invariati:
+   sfondi/bordi oro, gli stati :hover (hover:text-gold) e le varianti
+   in opacita' (text-gold/50, /60, /0), che sono decorativi.
+   ============================================ */
+.text-gold { color: var(--gold-dark); }
+footer .text-gold,
+#research-scroll .text-gold { color: var(--gold-light); }
