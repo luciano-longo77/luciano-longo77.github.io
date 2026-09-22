@@ -71,8 +71,15 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"></noscript>
 
 <link rel="stylesheet" href="entry.css">
+<style>
+  .skip-link { position:absolute; top:-100%; left:0; z-index:100; background:#0f172a; color:#fff;
+    padding:10px 20px; font-size:.75rem; text-transform:uppercase; letter-spacing:.1em;
+    text-decoration:none; transition:top .3s ease; }
+  .skip-link:focus { top:0; outline:2px solid #947a4b; outline-offset:2px; }
+</style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Salta al contenuto · Skip to content</a>
   <div class="bg-layer" aria-hidden="true">
     <div class="glow"></div><div class="glow-2"></div><div class="glow-3"></div>
     <div class="vignette"></div><div class="grain"></div>
@@ -86,7 +93,7 @@
     <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true" lang="en">EN</button>
   </div>
 
-  <main>
+  <main id="main-content">
     <!-- Logo -->
     <div class="logo fade d1">
       <div class="float"><div class="breathe">
