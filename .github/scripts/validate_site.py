@@ -23,7 +23,7 @@ from urllib.parse import urldefrag, urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-HTML_FILES = ["index.html", "en/index.html", "it/index.html"]
+HTML_FILES = ["index.html", "en/index.html", "it/index.html", "it/faq.html", "en/faq.html"]
 
 errors = []
 
