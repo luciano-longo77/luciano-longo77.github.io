@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f172a">
+<meta name="robots" content="noindex, follow">
+<title>404 — Luciano Longo</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    background: radial-gradient(1200px 600px at 50% -10%, #1e293b 0%, #0f172a 55%, #0b1120 100%);
+    color: #e7e1d5;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .box { max-width: 34rem; }
+  .code {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-size: clamp(4.5rem, 18vw, 8rem);
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+    color: #fff;
+    letter-spacing: .02em;
+  }
+  .rule {
+    width: 4rem;
+    height: 2px;
+    background: #947a4b;
+    margin: 1.25rem auto 1.75rem;
+    border: 0;
+  }
+  .msg { margin: .35rem 0; color: #cbd5e1; }
+  .msg .lead { color: #fff; font-weight: 500; }
+  .lang-sep {
+    margin: 1.5rem auto;
+    font-size: .75rem;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: #64748b;
+  }
+  .actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .75rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    display: inline-block;
+    padding: .7rem 1.4rem;
+    border: 1px solid #947a4b;
+    border-radius: 999px;
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: .95rem;
+    transition: background-color .25s, color .25s;
+  }
+  .btn:hover, .btn:focus-visible { background: #947a4b; color: #0f172a; }
+  .links a {
+    color: #bfa577;
+    text-decoration: none;
+    font-size: .9rem;
+    margin: 0 .4rem;
+  }
+  .links a:hover, .links a:focus-visible { color: #fff; text-decoration: underline; }
+  .sep { color: #475569; }
+</style>
+</head>
+<body>
+  <main class="box">
+    <p class="code">404</p>
+    <hr class="rule">
+
+    <p class="msg" lang="it">
+      <span class="lead">Pagina non trovata.</span><br>
+      La pagina che cerchi non esiste o è stata spostata.
+    </p>
+
+    <p class="lang-sep" aria-hidden="true">· · ·</p>
+
+    <p class="msg" lang="en">
+      <span class="lead">Page not found.</span><br>
+      The page you are looking for doesn't exist or has moved.
+    </p>
+
+    <div class="actions">
+      <a class="btn" href="/">Home</a>
+      <span class="links">
+        <a href="/it/" lang="it">Sito in italiano</a>
+        <span class="sep" aria-hidden="true">◆</span>
+        <a href="/en/" lang="en">English site</a>
+      </span>
+    </div>
+  </main>
+</body>
+</html>
